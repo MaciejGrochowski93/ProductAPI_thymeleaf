@@ -40,4 +40,26 @@ public class ProductService {
                 .forEach(products::add);
         return products;
     }
+
+    public List<Product> findProdByCategory(String category) {
+        ArrayList<Product> products = new ArrayList<>();
+        productRepository
+                .findAll()
+                .stream()
+                .filter(p -> p.getCategory().toLowerCase().equals(category))
+                .forEach(products::add);
+        return products;
+    }
+
+    public void addProduct(Product product){
+        productRepository.save(product);
+    }
+
+//    public void updateProduct(Product product, float id){
+//        productRepository.save(product);
+//    }
+
+    public void deleteProduct(Product product){
+        productRepository.delete(product);
+    }
 }

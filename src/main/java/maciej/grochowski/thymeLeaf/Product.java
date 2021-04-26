@@ -22,15 +22,19 @@ public class Product {
     @Column(name = "expiration_date")
     private Date expirationDate;
 
+    @Column(name = "category")
+    private String category;
+
     public Product() {
     }
 
-    public Product(long id, String name, String brand, float price, Date expirationDate) {
+    public Product(long id, String name, String brand, float price, Date expirationDate, String category) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.price = price;
         this.expirationDate = expirationDate;
+        this.category = category;
     }
 
     public long getId() {
@@ -71,5 +75,13 @@ public class Product {
 
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
