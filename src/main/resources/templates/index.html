@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center">
+        <table border="1">
+            <h1>Products list</h1>
+            <thead>
+                <tr>
+                    <th>Name </th>
+                    <th>Brand </th>
+                    <th>Price </th>
+                    <th>Date </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="products : ${listProduct}">
+                    <th th:text="${products.name}"> </th>
+                    <th th:text="${products.brand}"> </th>
+                    <th th:text="${products.price}"> </th>
+                    <th th:text="${products.expirationDate}"> </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
