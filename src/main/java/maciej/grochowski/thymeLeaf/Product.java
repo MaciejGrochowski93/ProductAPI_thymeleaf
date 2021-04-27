@@ -1,5 +1,7 @@
 package maciej.grochowski.thymeLeaf;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ import java.util.Date;
 @Table(name = "products")
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "name")
@@ -20,6 +22,7 @@ public class Product {
     private float price;
 
     @Column(name = "expiration_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date expirationDate;
 
     @Column(name = "category")

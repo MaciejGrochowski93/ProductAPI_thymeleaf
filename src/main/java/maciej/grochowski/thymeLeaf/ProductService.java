@@ -55,11 +55,7 @@ public class ProductService {
         productRepository.save(product);
     }
 
-//    public void updateProduct(Product product, float id){
-//        productRepository.save(product);
-//    }
-
-    public void deleteProduct(Product product){
-        productRepository.delete(product);
+    public void deleteProduct(long id){
+        productRepository.deleteById(id);
     }
 }

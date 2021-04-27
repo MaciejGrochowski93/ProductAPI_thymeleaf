@@ -11,14 +11,15 @@
     <div class="container">
         <h1>Product</h1>
         <hr>
-        <h2>Add Product</h2>
+        <h2>Update Product</h2>
         <form action="#" th:action="@{/addProduct}" th:object="${product}" method="POST">
+            <input type="hidden" th:field="*{id}">
             <input type="text" th:field = "*{name}" placeholder="Product's name" class="form-control mb-4 col-4">
             <input type="text" th:field = "*{brand}" placeholder="Product's brand" class="form-control mb-4 col-4">
             <input type="text" th:field = "*{price}" placeholder="Product's price" class="form-control mb-4 col-4">
             <input type="text" th:field = "*{category}" placeholder="Product's category" class="form-control mb-4 col-4">
             <input type="date" th:field = "*{expirationDate}" placeholder="Product's expiration date" class="form-control mb-4 col-4">
-            <button type="submit" class="btn btn-info col-2">Add Product</button>
+            <button type="submit" class="btn btn-info col-2">Update Product</button>
         </form>
     </div>
 </body>
